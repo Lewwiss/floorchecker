@@ -14,13 +14,13 @@ const Navigation = ({selected}) => {
     });
 
     return (
-        <div className={`z-50 w-full fixed px-10 duration-300 ${top ? "py-7" : "bg-neutral-900 py-5 drop-shadow-2xl"}`}>
+        <div className={`z-50 w-full fixed px-10 duration-300 ${top ? "py-7" : "bg-white py-5 drop-shadow-2xl"}`}>
             <div className="grid grid-cols-2">
                 <div className="flex flex-row items-center justify-start">
                     <p>Floor Checker</p>
                 </div>
                 <div className="flex flex-row items-center justify-end">
-                    <a href="/download" className="py-3.5 px-6 rounded-full border-white border-2 text-white font-bold text-md hover:bg-white hover:text-neutral-900 hover:scale-95 duration-300">Get the app</a>
+                    <a href="/app" className="rounded-xl duration-300 text-white font-medium py-4 px-7 border-2 border-black bg-black outline-none bg-white">Check My Wallet</a>
                 </div>
             </div>
         </div>

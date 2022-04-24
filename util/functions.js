@@ -8,8 +8,9 @@ export async function fetchFloorArr(address, start) {
       const floorData = await fetchFloorRequest.json();
 
       const floorElement = {
-        image_url: element.image_url,
-        name: element.name,
+        image_url: element.collection.image_url,
+        name: (element.name !== null ? element.name : `${element.collection.name} #${element.token_id}`),
+        id: element.id,
         collection: element.collection.name,
         description: element.collection.description,
         banner_image_url: element.collection.banner_image_url,
@@ -20,9 +21,9 @@ export async function fetchFloorArr(address, start) {
       return floorArr.push(floorElement);
     };
 
-    assetsData.assets.forEach((element) => {
-      fetchFloorPrice(element);
-    });
+    for (let i = 0; i < assetsData.assets.length; i++) {
+      await fetchFloorPrice(assetsData.assets[i]);
+    };
 
     return floorArr;
 };

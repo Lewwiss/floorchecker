@@ -1,9 +1,9 @@
 const Footer = () => {
     return (
-        <div className="bg-white border-t">
+        <div className="bg-black">
             <div className="mx-auto container grid grid-cols-9 py-16 px-6">
                 <div className="col-span-5">
-                    <a href="#" className="font-bold text-md text-white">© 2022 Podlist</a>
+                    <a href="#" className="font-bold text-md text-white">© 2022 Floor Checker</a>
                 </div>
                 <div className="col-span-2 flex flex-col space-y-8">
                     <a href="/" className="font-medium text-md text-white">Browse</a>

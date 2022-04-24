@@ -2,28 +2,27 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { fetchFloorArr } from '../util/functions';
 
+import Data from '../components/Data';
+import Asset from '../components/Asset';
 import Navigation from '../components/Navigation';
 
-import Footer from '../components/Footer';
+// 0x148089038088cC49CDcF26e0f96776c25e5CfACd
 
 const Home = () => {
-  const [floorArr, setFloorArr] = useState([]);
-
-  async function fetchAllAssets() {
-    const floorArrRequest = await fetchFloorArr("0x148089038088cC49CDcF26e0f96776c25e5CfACd", "");
-    setFloorArr(floorArrRequest);
-  };
 
   return (
     <div className="min-h-screen bg-white">
       <Head>
-        <title>Floor Checker - Find The Total Floors Of Your Wallet</title>
+        <title>Floor Checker - Find The Total Floors Of Your NFT's</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="min-h-screen mx-auto container max-w-sm h-10 flex flex-col justify-center space-y-6">
-        <input type="text" placeholder="Wallet Address" className="text-md rounded-full py-5 px-7 outline-none bg-white border" />
-        <button onClick={() => fetchAllAssets()} className="text-md text-white font-bold rounded-full py-5 px-7 bg-indigo-600 outline-none bg-white">Find Floors</button>
-      </div>
+      <Navigation />
+        <div>
+            <div className="mx-auto container flex flex-row justify-center items-center space-x-6 min-h-screen">
+                <a href="/app" className="rounded-xl duration-300 text-white font-medium py-4 px-7 border-2 border-indigo-600 bg-indigo-600 outline-none bg-white">Check Floors</a>
+                <a href="/" className="rounded-xl duration-300 text-indigo-600 font-bold py-4 px-7 border-2 border-indigo-200 bg-indigo-200 outline-none bg-white">How it works</a>
+            </div>
+        </div>
     </div>
   );
 };
