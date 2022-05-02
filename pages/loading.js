@@ -8,18 +8,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Loading from '../components/Loading';
 
-// 0x148089038088cC49CDcF26e0f96776c25e5CfACd
-
 const Home = () => {
-  const [address, setAddress] = useState("0x148089038088cC49CDcF26e0f96776c25e5CfACd");
-  const [floorArr, setFloorArr] = useState([]);
-  const [total, setTotal] = useState("100");
-
-  async function fetchAllAssets(address) {
-    const floorArrRequest = await fetchFloorArr(address, "");
-    setFloorArr(floorArrRequest);
-  };
-
   return (
     <div className="min-h-screen bg-slate-900">
       <Head>
@@ -28,6 +17,7 @@ const Home = () => {
       </Head>
       <Navigation />
       <Loading />
+      <Footer />
     </div>
   );
 };

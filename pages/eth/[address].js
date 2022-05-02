@@ -11,11 +11,10 @@ import Loading from '../../components/Loading';
 const Home = () => {
   const router = useRouter();
   const { address } = router.query;
-  const [floorArr, setFloorArr] = useState([]);
-  const [total, setTotal] = useState("100");
+  const [floorArr, setFloorArr] = useState({success: null, floorArr: []});
 
   async function fetchAllAssets(address) {
-    const floorArrRequest = await fetchFloorArr(address, "");
+    const floorArrRequest = await fetchFloorArr(address);
     setTimeout(() => setFloorArr(floorArrRequest), 1000);
   };
 
@@ -23,6 +22,18 @@ const Home = () => {
     if (!address) return;
     fetchAllAssets(address);
   }, [address]);
+
+  function getElements(data) {
+    switch(data.success) {
+      case false:
+        router.push("/");
+        return;
+      case true:
+        return <Data floorArr={floorArr.floorArr} address={address} />;
+      default:
+        return <Loading />;
+    };
+  };
 
   return (
     <div className="min-h-screen bg-slate-900">
@@ -32,10 +43,7 @@ const Home = () => {
       </Head>
       <Navigation />
       {
-        floorArr.length > 0 ?
-        <Data floorArr={floorArr} address={address} />
-        :
-        <Loading />
+        getElements(floorArr)
       }
       <Footer />
     </div>
