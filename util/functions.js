@@ -2,7 +2,7 @@ export async function fetchFloorArr(address) {
     if (address.length <= 0) return({success: false, floorArr: []});
     if (!/^0x[a-fA-F0-9]{40}$/.test(address)) return({success: false, floorArr: []});
 
-    const fetchAssetsRequest = await fetch(`https://api.opensea.io/api/v1/assets/?owner=${address}&order_direction=asc&limit=50`);
+    const fetchAssetsRequest = await fetch(`https://api.opensea.io/api/v1/assets/?owner=${address}&order_direction=desc&limit=20`);
     const assetsData = await fetchAssetsRequest.json();
     const floorArr = [];
     

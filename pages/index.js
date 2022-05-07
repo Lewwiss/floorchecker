@@ -24,10 +24,10 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation />
-      <div className="mx-auto container max-w-7xl grid grid-cols-2">
-        <div className="min-h-screen flex flex-col items-start justify-center px-6 3xl:px-0">
-          <h1 className="text-6xl font-extrabold leading-normal text-white">Find The Floors <br />Of Your NFTs</h1>
-          <div className="relative pt-10 w-full max-w-2xl flex flex-row justify-center space-x-6">
+      <div className="mx-auto container max-w-7xl grid grid-cols-1 2xl:grid-cols-2">
+        <div className="2xl:min-h-screen flex flex-col items-center 2xl:items-start justify-center px-6 2xl:px-0 pt-56 pb-10 2xl:py-80">
+          <h1 className="text-6xl font-extrabold leading-normal text-white text-center 2xl:text-left">Find The Floors <br />Of Your NFTs</h1>
+          <div className="relative pt-8 w-full max-w-2xl flex flex-row justify-center space-x-6">
             <input type="text" placeholder="Wallet Address" className={`text-white font-medium w-full text-sm rounded-md py-3.5 px-5 outline-none bg-slate-800 placeholder-slate-600 ${errors.length > 0 ? "border border-rose-500" : "border border-slate-700"}`} onChange={(e) => setAddress(e.target.value)}/ >
             <button onClick={() => sendForm()} className="rounded-md text-sm text-white font-bold py-4 px-12 bg-primary outline-none duration-300 hover:-translate-y-1">Check</button>
             {
@@ -37,9 +37,11 @@ const Home = () => {
               null
             }
           </div>
+          <p className="pt-11 text-sm text-slate-600">Example: 0x148089038088cC49CDcF26e0f96776c25e5CfACd</p>
         </div>
-        <div className="flex items-center justify-center bg-slate-800">
-            
+        <div className="relative flex items-end 2xl:items-center justify-center w-full">
+            <img src="/images/desktop.svg" className="translate-x-10 w-full hidden 2xl:block" />
+            <img src="/images/mobile.svg" className="w-full block 2xl:hidden px-10 md:px-32" />
         </div>
       </div>
       <Footer />
