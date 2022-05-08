@@ -25,7 +25,7 @@ const Home = () => {
       </Head>
       <Navigation />
       <div className="mx-auto container max-w-7xl grid grid-cols-1 2xl:grid-cols-2">
-        <div className="2xl:min-h-screen flex flex-col items-center 2xl:items-start justify-center px-6 2xl:px-0 pt-56 pb-10 2xl:py-80">
+        <div className="2xl:min-h-screen flex flex-col items-center 2xl:items-start justify-center px-6 2xl:px-0 pt-48 pb-10 2xl:py-80">
           <h1 className="text-6xl font-extrabold leading-normal text-white text-center 2xl:text-left">Find The Floors <br />Of Your NFTs</h1>
           <div className="relative pt-8 w-full max-w-2xl flex flex-row justify-center space-x-6">
             <input type="text" placeholder="Wallet Address" className={`text-white font-medium w-full text-sm rounded-md py-3.5 px-5 outline-none bg-slate-800 placeholder-slate-600 ${errors.length > 0 ? "border border-rose-500" : "border border-slate-700"}`} onChange={(e) => setAddress(e.target.value)}/ >

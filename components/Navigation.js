@@ -21,7 +21,7 @@ const Navigation = () => {
 
     return (
         <div className={`fixed right-0 left-0 z-50 px-6 3xl:px-0 w-full duration-300 bg-slate-900 ${top ? "py-7" : "py-5"}`}>
-            <div className="mx-auto container grid grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto container grid grid-cols-3 lg:grid-cols-2">
                 <div className="flex flex-row items-center justify-start">
                     <a href="/" className="hidden lg:flex flex-row items-center justify-start space-x-4">
                         <div className="bg-primary h-8 w-8 rounded-md flex items-center justify-center">
@@ -39,13 +39,15 @@ const Navigation = () => {
                         </div>
                     </button>
                 </div>
+                {/*
                 <div className="hidden lg:flex flex-row items-center justify-center space-x-12">
-                    <a href="/" className="text-sm font-medium text-slate-600 hover:text-white duration-500">How it works?</a>
-                    <a href="/" className="text-sm font-medium text-slate-600 hover:text-white duration-500">FAQ</a>
+                    <a href="#" className="text-sm font-medium text-slate-600 hover:text-white duration-500">How it works?</a>
+                    <a href="#" className="text-sm font-medium text-slate-600 hover:text-white duration-500">FAQ</a>
                     <a href="https://discord.gg/qrmZgCx4n3" target="_blank" className="text-sm font-medium text-slate-600 hover:text-white duration-500">Support</a>
                 </div>
-                <div className="relative flex flex-row items-center justify-end">
-                    <a href="#" className="rounded-md text-sm text-white font-bold py-4 px-8 bg-slate-700 outline-none line-through">
+                */}
+                <div className="relative flex flex-row items-center justify-end col-span-2 lg:col-span-1">
+                    <a href="#" className="rounded-md text-sm text-slate-600 font-bold py-4 px-8 bg-slate-700 outline-none line-through">
                         Connect wallet
                     </a>
                     {/*<div className="absolute bg-white rounded-md -bottom-36">

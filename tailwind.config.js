@@ -9,14 +9,14 @@ module.exports = {
                 'sans': ['JetBrains Mono']
             },
             colors: {
-                primary: "#4f46e5",
+                primary: "#4f46e5", //#0083ff   dark - #081131       bg light - #f8faff     old - #4f46e5
                 neutral: {
                     900: "#080808",
                     800: "#101010",
                     700: "#181818"
                 },
                 slate: {
-                    900: "#15131b",
+                    900: "#100e14", //100e14 //15131b
                     800: "#1b1921",
                     700: "#24222a",
                     600: "#6a667c",
