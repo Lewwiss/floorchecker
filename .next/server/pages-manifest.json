@@ -1,9 +1,0 @@
-{
-  "/404": "pages/404.html",
-  "/_app": "pages/_app.js",
-  "/eth/[address]": "pages/eth/[address].html",
-  "/": "pages/index.html",
-  "/loading": "pages/loading.html",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js"
-}
