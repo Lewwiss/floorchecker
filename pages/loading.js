@@ -1,9 +1,4 @@
 import Head from 'next/head';
-import { useState } from 'react';
-import { fetchFloorArr } from '../util/functions';
-
-import Data from '../components/Data';
-import Asset from '../components/Asset';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Loading from '../components/Loading';

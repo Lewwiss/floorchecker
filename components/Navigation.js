@@ -43,7 +43,7 @@ const Navigation = () => {
                 <div className="hidden lg:flex flex-row items-center justify-center space-x-12">
                     <a href="#" className="text-sm font-medium text-slate-600 hover:text-white duration-500">How it works?</a>
                     <a href="#" className="text-sm font-medium text-slate-600 hover:text-white duration-500">FAQ</a>
-                    <a href="https://discord.gg/qrmZgCx4n3" target="_blank" className="text-sm font-medium text-slate-600 hover:text-white duration-500">Support</a>
+                    <a href="#" target="_blank" className="text-sm font-medium text-slate-600 hover:text-white duration-500">Support</a>
                 </div>
                 */}
                 <div className="relative flex flex-row items-center justify-end col-span-2 lg:col-span-1">
