@@ -36,9 +36,9 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-black">
       <Head>
-        <title>Floor Checker - Wallet Summary</title>
+        <title>Floor Checker: Ethereum Wallet Summary</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation />

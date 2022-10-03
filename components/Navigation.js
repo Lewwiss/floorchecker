@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 const Navigation = () => {
     const [top, setTop] = useState(true);
+    const [open, setOpen] = useState(false);
 
     function scrollEventListener() {
         if (window.pageYOffset === 0) {
@@ -18,47 +19,42 @@ const Navigation = () => {
             window.removeEventListener("scroll", scrollEventListener);
         };
     }, []);
-
+    
     return (
-        <div className={`fixed right-0 left-0 z-50 px-6 3xl:px-0 w-full duration-300 bg-slate-900 ${top ? "py-7" : "py-5"}`}>
-            <div className="mx-auto container grid grid-cols-3 lg:grid-cols-2">
+        <div className={`fixed right-0 left-0 z-50 px-6 3xl:px-0 w-full duration-300 bg-black ${top ? "py-7" : "py-5"}`}>
+            <div className="mx-auto container max-w-7xl grid grid-cols-2 lg:grid-cols-2">
                 <div className="flex flex-row items-center justify-start">
                     <a href="/" className="hidden lg:flex flex-row items-center justify-start space-x-4">
-                        <div className="bg-primary h-8 w-8 rounded-md flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="#fff">
+                        <div className="bg-customgreen h-10 w-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="#000">
                                 <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
                             </svg>
                         </div>
-                        <p className="font-bold text-white text-lg">FloorChecker.io</p>
                     </a>
                     <button className="block lg:hidden">
-                        <div className="bg-slate-700 h-9 w-9 rounded-md flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#fff" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
+                        <div className="border-white border-2 h-10 w-10 flex items-center justify-center">
+                            
                         </div>
                     </button>
                 </div>
-                {/*
-                <div className="hidden lg:flex flex-row items-center justify-center space-x-12">
-                    <a href="#" className="text-sm font-medium text-slate-600 hover:text-white duration-500">How it works?</a>
-                    <a href="#" className="text-sm font-medium text-slate-600 hover:text-white duration-500">FAQ</a>
-                    <a href="#" target="_blank" className="text-sm font-medium text-slate-600 hover:text-white duration-500">Support</a>
-                </div>
-                */}
-                <div className="relative flex flex-row items-center justify-end col-span-2 lg:col-span-1">
-                    <a href="#" className="rounded-md text-sm text-slate-600 font-bold py-4 px-8 bg-slate-700 outline-none line-through">
+                <div className="relative flex flex-row items-center justify-end space-x-10">
+                    <a href="#" className="text-sm text-white duration-500 hidden lg:block line-through">How it works?</a>
+                    <a href="faq" className="text-sm text-white duration-500 hidden lg:block">FAQ</a>
+                    <a href="/support" className="text-sm text-white duration-500 hidden lg:block">Support</a>
+                    <div className="relative">
+                        <button onClick={() => setOpen(!open)} className="text-sm text-white font-semibold py-4 border-2 border-white px-7 bg-black outline-none flex flex-row items-center">
                         Connect wallet
-                    </a>
-                    {/*<div className="absolute bg-white rounded-md -bottom-36">
-                        <button className="py-5 px-14 text-sm">Metamask</button>
-                        <hr className=""/>
-                        <button className="py-5 px-14 text-sm">Coinbase</button>
-                    </div>*/}
+                        </button>
+                        <div className={`${open ? "absolute" : "hidden"} bg-white mt-2 w-full`}>
+                            <button className="w-full text-sm py-4 border-2 border-white line-through">Metamask</button>
+                            <hr className=""/>
+                            <button className="w-full text-sm py-4 border-2 border-white line-through">Coinbase</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 export default Navigation;
