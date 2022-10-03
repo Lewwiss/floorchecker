@@ -55,12 +55,12 @@ const Footer = () => {
                 <div className="w-full bg-customgreen p-14">
                     <h1 className="text-black font-semibold text-4xl leading-normal">Need help? Contact us.</h1>
                     <div className="flex flex-row space-x-4 pt-6 items-center justify-center">
-                        <button onClick={() => sendForm()} className="text-sm text-white font-semibold py-3 border-2 border-black px-8 bg-black outline-none flex flex-row items-center">
+                        <a href="/support" className="text-sm text-white font-semibold py-3 border-2 border-black px-8 bg-black outline-none flex flex-row items-center">
                             Support
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className="w-6 ml-2">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                             </svg>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -74,23 +74,6 @@ const Footer = () => {
                         <a href="#" className="text-sm text-white duration-500 underline underline-offset-4">FAQ</a>
                         <a href="#" target="_blank" className="text-sm text-white duration-500 underline underline-offset-4">Support</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    );
-
-    return (
-        <div className="bg-slate-800 border-slate-700 border-t px-6 3xl:px-0">
-            <div className="mx-auto container grid grid-cols-1 lg:grid-cols-2 py-14">
-                <div className="flex flex-row items-center justify-center lg:justify-start order-2 lg:order-1 pt-10 lg:pt-0">
-                    <p className="text-slate-600 font-medium text-sm leading-loose">© 2022 FloorChecker.io, All rights reserved.</p>
-                </div>
-                <div className="flex flex-row space-x-8 items-center justify-center lg:justify-end order-1 lg:order-2">
-                    <Discord />
-                    <Github />
-                    {/* <Tiktok /> */}
-                    <Instagram />
-                    <Twitter />
                 </div>
             </div>
         </div>
