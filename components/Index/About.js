@@ -1,6 +1,6 @@
 const About = () => {
     return (
-        <div className="pt-10">
+        <div className="bg-neutral-100 pt-10 border-t-2 border-dashed">
             <div className="mx-auto container max-w-4xl grid grid-cols-2 gap-10 py-28">
                 <div className="flex flex-col items-start justify-center">
                     <h1 className="text-white font-semibold text-5xl leading-normal max-w-md">Easiest way to calculate your wallets worth</h1>

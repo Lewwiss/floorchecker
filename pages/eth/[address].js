@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { fetchFloorArr } from '../../util/functions';
+import { fetchFloorArr } from '../../util/ethereum';
 
-import Data from '../../components/Data';
+import Data from '../../components/Data/Data';
 import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
-import Loading from '../../components/Loading';
+import Loading from '../../components/Data/Loading';
 
 const Home = () => {
   const router = useRouter();
@@ -36,16 +35,15 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <Head>
-        <title>Floor Checker: Ethereum Wallet Summary</title>
+        <title>Ethereum Wallet Summary - Floor Checker</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation />
       {
         getElements(floorArr)
       }
-      <Footer />
     </div>
   );
 };
