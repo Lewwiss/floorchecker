@@ -12,12 +12,12 @@ export async function solanaFloors(address) {
             collection: element.nft_collection_name,
             name: element.nft_name,
             contract: element.token_address,
-            floor: parseFloat(element.sold_price / 1000000000),
+            floor: parseFloat(element.sold_price / 1000000000).toFixed(2),
             image: element.nft_image
         };
         total += parseFloat(element.sold_price / 1000000000);
         assets.push(asset);
     });
 
-    return ({ success: true, total: total, assets: assets });
+    return ({ success: true, total: total.toFixed(2), assets: assets });
 };

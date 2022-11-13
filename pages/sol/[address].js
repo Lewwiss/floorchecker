@@ -23,6 +23,8 @@ const Home = () => {
         getSolanaFloors();
     }, [address]);
 
+    console.log(response.assets)
+
     return (
         <div>
             <Head>

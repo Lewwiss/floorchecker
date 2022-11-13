@@ -1,51 +1,44 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
-import { fetchFloorArr } from '../../util/ethereum';
+import { useEffect, useState } from 'react';
+import { ethereumFloors } from '../../util/ethereum';
 
-import Data from '../../components/Data/Data';
 import Navigation from '../../components/Navigation';
-import Loading from '../../components/Data/Loading';
+import Total from '../../components/Data/Total';
+import Data from '../../components/Data/Data';
+import Footer from '../../components/Footer';
 
 const Home = () => {
-  const router = useRouter();
-  const { address } = router.query;
-  const [floorArr, setFloorArr] = useState({success: null, floorArr: []});
+    const router = useRouter();
+    const { address } = router.query;
+    const [response, setResponse] = useState({ success: false, total: 0, assets: [] });
 
-  async function fetchAllAssets(address) {
-    const floorArrRequest = await fetchFloorArr(address);
-    setTimeout(() => setFloorArr(floorArrRequest), 1000);
-  };
-
-  useEffect(() => {
-    if (!address) return;
-    fetchAllAssets(address);
-  }, [address]);
-
-  function getElements(data) {
-    switch(data.success) {
-      case false:
-        router.push("/");
-        return;
-      case true:
-        return <Data floorArr={floorArr.floorArr} address={address} />;
-      default:
-        return <Loading />;
+    async function getEthereumFloors() {
+        const getEthereumFloorsRequest = await ethereumFloors(address);
+        setResponse(getEthereumFloorsRequest);
     };
-  };
 
-  return (
-    <div className="min-h-screen">
-      <Head>
-        <title>Ethereum Wallet Summary - Floor Checker</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navigation />
-      {
-        getElements(floorArr)
-      }
-    </div>
-  );
+    useEffect(() => {
+        if (!address ||address === null || address === "") return;
+        getEthereumFloors();
+    }, [address]);
+
+    console.log(response)
+
+    return (
+        <div>
+            <Head>
+                <title>Ethereum Wallet Summary - Floor Checker</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <Navigation />
+            <Total blockchain="Ethereum" address={address} total={response.total} />
+            {
+                response.success ? <Data assets={response.assets} /> : <p>no</p>
+            }
+            <Footer />
+        </div>
+    );
 };
 
 export default Home;
