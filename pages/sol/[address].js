@@ -32,8 +32,9 @@ const Home = () => {
             <Navigation />
             <Total blockchain="Solana" address={address} total={response.total} />
             {
-                response.success ? <Data assets={response.assets} /> : <p>no</p>
+                response.success ? <Data assets={response.assets} /> : <Data assets={[]} />
             }
+            <Footer />
         </div>
     );
 };

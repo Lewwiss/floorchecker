@@ -50,18 +50,18 @@ const Discord = () => {
 
 const Footer = () => {
     return (
-        <div className="mt-16">
-            <div className="mx-auto container max-w-7xl bg-blue-500 text-center flex flex-col items-center justify-center">
-                <div className="w-full flex bg-primary p-14">
-                    <a href="/support" className="text-sm text-white font-semibold py-3 border-2 border-black px-8 bg-black outline-none flex flex-row items-center">
-                        Support
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className="w-6 ml-2">
+        <div className="mt-20">
+            <div className="mx-auto container max-w-6xl text-center flex flex-col items-center justify-center px-6 xl:px-0">
+                <div className="w-full flex flex-row justify-center space-x-5 bg-primary p-14">
+                    <button className="text-sm text-black font-semibold py-3.5 px-8 bg-white outline-none flex flex-row items-center duration-200 hover:scale-105 hover:-rotate-1">
+                        Subscribe
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#000" className="w-6 ml-2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg>
-                    </a>
+                    </button>
                 </div>
             </div>
-            <div className="mt-16 bg-black h-10">
+            <div className="mt-20 bg-black h-20">
                 
             </div>
         </div>

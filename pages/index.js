@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Navigation from '../components/Navigation';
 import Landing from '../components/Index/Landing';
 import About from '../components/Index/About';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -13,6 +14,8 @@ const Home = () => {
       </Head>
       <Navigation />
       <Landing />
+      <About />
+      <Footer />
     </div>
   );
 };

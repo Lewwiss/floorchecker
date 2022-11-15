@@ -6,7 +6,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'sans': ['Euclid Circular A']
+                'sans': ['Lexend']
             },
             padding: {
                 "4.5": "1.125rem"
@@ -15,7 +15,7 @@ module.exports = {
                 "4.5": "1.125rem"
             },
             colors: {
-                primary: "#4f46e5"
+                primary: "#000"
             },
         },
     },
