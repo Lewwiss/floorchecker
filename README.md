@@ -1,10 +1,9 @@
+> Still under construction.
 # FloorChecker - Check Your NFT Floors
 > Calculate the value of your NFT portfolio quickly & simply.
 [floorchecker.io](https://floorchecker.io/)
 
 ## Description
-
-> Still under construction.
 
 FloorChecker is a NextJS app that summarises your NFT wallets value by fetching relevant floor prices. Currently working for [Ethereum](https://ethereum.org/en/) and [Solana](https://solana.com/)
 
