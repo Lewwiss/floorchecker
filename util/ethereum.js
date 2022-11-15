@@ -23,9 +23,9 @@ export async function ethereumFloors(address) {
         assets.push(asset);
     };
 
-    await ethereumAssetsData.assets.forEach((element) => {
-        ethereumAssetLoop(element);
-    });
+    for (let i = 0; i < ethereumAssetsData.assets.length; i++) {
+        await ethereumAssetLoop(ethereumAssetsData.assets[i]);
+    };
 
     return ({ success: true, total: total.toFixed(2), assets: assets });
 };

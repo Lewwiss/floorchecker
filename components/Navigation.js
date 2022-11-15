@@ -33,7 +33,7 @@ const Navigation = () => {
                 </div>
                 <div className="relative flex flex-row items-center justify-end space-x-10">
                     <div className="relative">
-                        <button onClick={() => setOpen(!open)} className="text-sm text-white font-semibold py-4.5 px-8 bg-primary outline-none flex flex-row items-center">
+                        <button onClick={() => setOpen(!open)} className="text-sm text-white font-semibold py-4.5 px-8 bg-primary outline-none flex flex-row items-center duration-200 hover:scale-105 hover:-rotate-1">
                             Connect wallet
                         </button>
                         <div className={`${open ? "absolute" : "hidden"} bg-white border-2 border-dashed mt-2 w-full`}>

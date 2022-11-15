@@ -12,7 +12,7 @@ const Data = ({ assets }) => {
                     })
                 }
                 </div>:
-                null
+                <p>{assets.length}</p>
             }
         </div>
     );

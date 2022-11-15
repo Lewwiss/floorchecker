@@ -7,7 +7,7 @@ export async function solanaFloors(address) {
     const assets = [];
     let total = 0;
 
-    await solanaAssetsData.data.list_nfts.forEach((element) => {
+    async function solanaAssetLoop(element) {
         const asset = {
             collection: element.nft_collection_name,
             name: element.nft_name,
@@ -17,7 +17,11 @@ export async function solanaFloors(address) {
         };
         total += parseFloat(element.sold_price / 1000000000);
         assets.push(asset);
-    });
+    };
+
+    for (let i = 0; i < solanaAssetsData.data.list_nfts.length; i++) {
+        await solanaAssetLoop(solanaAssetsData.data.list_nfts[i]);
+    };
 
     return ({ success: true, total: total.toFixed(2), assets: assets });
 };

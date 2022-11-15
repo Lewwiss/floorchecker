@@ -23,8 +23,6 @@ const Home = () => {
         getEthereumFloors();
     }, [address]);
 
-    console.log(response)
-
     return (
         <div>
             <Head>
@@ -36,7 +34,6 @@ const Home = () => {
             {
                 response.success ? <Data assets={response.assets} /> : <p>no</p>
             }
-            <Footer />
         </div>
     );
 };

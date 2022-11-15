@@ -23,8 +23,6 @@ const Home = () => {
         getSolanaFloors();
     }, [address]);
 
-    console.log(response.assets)
-
     return (
         <div>
             <Head>
@@ -36,7 +34,6 @@ const Home = () => {
             {
                 response.success ? <Data assets={response.assets} /> : <p>no</p>
             }
-            <Footer />
         </div>
     );
 };
